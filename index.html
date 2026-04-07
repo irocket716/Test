@@ -3,98 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome</title>
+  <title>Chief Data Office | U.S. Air Force</title>
   <style>
+    :root {
+      --bg: #0b1729;
+      --card: #12243d;
+      --accent: #5fb3ff;
+      --text: #f5f8ff;
+      --muted: #c5d3ea;
+      --border: #2b4669;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      min-height: 100vh;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #081221, var(--bg));
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    header {
+      padding: 56px 20px 36px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 12px auto 0;
+      max-width: 760px;
+      color: var(--muted);
+    }
+
+    main {
+      width: min(1040px, 92vw);
+      margin: 30px auto 56px;
       display: grid;
-      place-items: center;
-      background: #f5f7fb;
-      color: #1f2937;
+      gap: 22px;
     }
 
-    .card {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 24px;
-      width: min(90vw, 420px);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
     }
 
-    h1 {
+    h2 {
       margin: 0 0 12px;
-      font-size: 1.4rem;
+      color: var(--accent);
+      font-size: 1.35rem;
     }
 
-    p {
-      margin: 0 0 16px;
+    .mission p,
+    .notes p {
+      margin: 0;
+      color: var(--muted);
     }
 
-    form {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 16px;
+    .speech-list {
+      display: grid;
+      gap: 16px;
     }
 
-    input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #d1d5db;
-      border-radius: 8px;
-      font-size: 1rem;
+    article {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
     }
 
-    button {
-      padding: 10px 14px;
-      border: 0;
-      border-radius: 8px;
-      background: #2563eb;
-      color: #ffffff;
-      font-weight: 600;
-      cursor: pointer;
+    article h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      color: #d9e9ff;
     }
 
-    #greeting {
-      font-size: 1.1rem;
-      font-weight: 600;
-      min-height: 1.2em;
+    article p {
+      margin: 0;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <h1>Welcome!</h1>
-    <p>Tell us your name so we can greet you.</p>
+  <header>
+    <h1>Chief Data Office</h1>
+    <p>Empowering the U.S. Air Force with trusted data, resilient digital architecture, and decision advantage at every level of command.</p>
+  </header>
 
-    <form id="name-form">
-      <input id="name-input" name="name" type="text" placeholder="Enter your name" required />
-      <button type="submit">Say hello</button>
-    </form>
+  <main>
+    <section class="mission">
+      <h2>Office Mission</h2>
+      <p>The Chief Data Office leads enterprise data strategy across the Air Force to improve readiness, modernize operations, and accelerate mission outcomes. We align governance, analytics, and AI-enabled capabilities so Airmen and Guardians can act faster with confidence.</p>
+    </section>
 
-    <div id="greeting" aria-live="polite"></div>
+    <section>
+      <h2>Prepared Speeches for Air Force Events</h2>
+      <div class="speech-list">
+        <article>
+          <h3>Speech 1: Data as a Warfighting Capability</h3>
+          <p>Good morning team. Today, we recognize that data is no longer a back-office resource. It is a core warfighting capability. Every sortie flown, every maintenance action completed, and every mission decision made improves when data is visible, reliable, and actionable. Our responsibility is to ensure that information moves as fast as operations. We will continue building secure data pathways, strengthening digital skills, and delivering tools that place insight directly in the hands of our Airmen.</p>
+        </article>
+
+        <article>
+          <h3>Speech 2: Building Trust Through Governance</h3>
+          <p>Thank you for your dedication to the mission. Effective governance is not about slowing innovation; it is about enabling trust at scale. When we define standards, protect data integrity, and establish clear ownership, we create the conditions for faster decision-making. In the Chief Data Office, we are committed to transparent stewardship so commanders can rely on one shared picture of operations. Trust in data means trust in outcomes, and trust in outcomes means mission success.</p>
+        </article>
+
+        <article>
+          <h3>Speech 3: The Future Force and AI Readiness</h3>
+          <p>As we prepare for tomorrow's challenges, we must integrate AI and advanced analytics responsibly and decisively. Technology alone does not win; prepared people do. Our focus is on equipping the force with practical tools, repeatable training, and ethical guardrails that keep us mission-focused and accountable. The Air Force has always transformed to meet emerging threats. Through disciplined data strategy, we will continue to lead from the front and secure advantage for the nation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>Coordination Notes</h2>
+      <p>These draft speeches are prepared for adaptation by senior leadership, public affairs, and event hosts. Update names, event details, and audience references before delivery.</p>
+    </section>
   </main>
-
-  <script>
-    const form = document.getElementById('name-form');
-    const nameInput = document.getElementById('name-input');
-    const greeting = document.getElementById('greeting');
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const name = nameInput.value.trim();
-
-      if (!name) {
-        greeting.textContent = 'Please enter your name first.';
-        return;
-      }
-
-      greeting.textContent = `Hello, ${name}!`;
-      nameInput.value = '';
-      nameInput.focus();
-    });
-  </script>
 </body>
 </html>
