@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      width: min(90vw, 420px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 1.4rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    form {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px 14px;
+      border: 0;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #greeting {
+      font-size: 1.1rem;
+      font-weight: 600;
+      min-height: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Welcome!</h1>
+    <p>Tell us your name so we can greet you.</p>
+
+    <form id="name-form">
+      <input id="name-input" name="name" type="text" placeholder="Enter your name" required />
+      <button type="submit">Say hello</button>
+    </form>
+
+    <div id="greeting" aria-live="polite"></div>
+  </main>
+
+  <script>
+    const form = document.getElementById('name-form');
+    const nameInput = document.getElementById('name-input');
+    const greeting = document.getElementById('greeting');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = nameInput.value.trim();
+
+      if (!name) {
+        greeting.textContent = 'Please enter your name first.';
+        return;
+      }
+
+      greeting.textContent = `Hello, ${name}!`;
+      nameInput.value = '';
+      nameInput.focus();
+    });
+  </script>
+</body>
+</html>
